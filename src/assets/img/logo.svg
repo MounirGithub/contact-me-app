@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xmlns="http://www.w3.org/2000/svg">
+  <g id="Character" transform="matrix(1.5663650035858154, -0.034477997571229935, 0.04634900391101837, 2.1573030948638916, -164.34649658203136, -243.4685516357422)" style="">
+    <g>
+      <text style="fill: rgb(255, 255, 255); font-family: Zapfino; font-size: 50px; font-weight: 700; letter-spacing: 2.9px; stroke: rgb(255, 255, 255); stroke-miterlimit: 4.41; stroke-width: 2.68489px; word-spacing: -1.1px; white-space: pre;" transform="matrix(1, 0, 0, 1, 6.084856, -35.670586)"><tspan x="93.246" y="262.069">{</tspan><tspan style="stroke: rgb(255, 0, 0);">M</tspan><tspan>ounir</tspan><tspan x="93.246" dy="1.5em">​</tspan><tspan>   .B.  }</tspan><tspan x="93.246" dy="1.5em">​</tspan></text>
+      <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 20.6px; stroke: rgb(0, 0, 0); white-space: pre;" x="226.425" y="273.701"> </text>
+      <text style="fill: rgb(255, 255, 255); font-family: Arial, sans-serif; font-size: 20.6px; stroke: rgb(0, 0, 0); white-space: pre;" x="356.596" y="330.977"> </text>
+      <text style="white-space: pre; fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 28px;" transform="matrix(0.470589, 0.007521, -0.01011, 0.341683, 310.639862, 273.384705)"> </text>
+      <text style="fill: rgb(51, 51, 51); font-family: Arial, sans-serif; font-size: 28px; stroke-linecap: square; white-space: pre;" transform="matrix(0.470589, 0.007521, -0.01011, 0.341683, 533.053894, 225.080353)">Enter your text here</text>
+    </g>
+  </g>
+</svg>
