@@ -1,11 +1,15 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
-import headerImg from "../assets/img/header-img.svg"
+import headerImg from "../assets/img/header-img.svg";
+import download from "../assets/img/download.svg";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 import { TypeAnimation } from 'react-type-animation';
+import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
 
 export const Banner = () => {
+    const px = isBrowser ? "65px" : "30px";
+
     return (
         <section className="banner" id="home">
             <Container>
@@ -31,15 +35,19 @@ export const Banner = () => {
                                         wrapper="span"
                                         cursor={true}
                                         repeat={Infinity}
-                                        style={{ fontSize: '65px', display: 'inline-block' }}
+                                        style={{ fontSize: px, display: 'inline-block' }}
                                     />
                                     <p>Je suis un ingénieur de recherche et développement passionné par le développement de logiciels, je connais différentes choses dans différents domaines et j'applique ces connaissances dans ma vie de tous les jours, non seulement au travail mais aussi dans chaque activité que je fais dans ma vie ! Je suis ravi de partager avec vous mon parcours en tant qu'ingénieur R&D et un passionné de sportet des mangas.
                                     </p>
+                                    <a class="icon-link">
+                                        <svg className="bi" aria-hidden="true"><use href={download}></use></svg>
+                                        Télecharger mon CV
+                                    </a>
                                 </div>}
                         </TrackVisibility>
                     </Col>
                     <Col xs={12} md={6} xl={5}>
-                        <img src={headerImg} alt="Header Image" />
+                        <BrowserView><img src={headerImg} alt="Header Image" /></BrowserView>
                     </Col>
                 </Row>
             </Container>
