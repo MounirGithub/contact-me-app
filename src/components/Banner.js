@@ -1,12 +1,10 @@
 import { Col, Container, Row } from "react-bootstrap";
-import { ArrowRightCircle } from "react-bootstrap-icons";
 import headerImg from "../assets/img/header-img.svg";
-import download from "../assets/img/download.svg";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 import { TypeAnimation } from 'react-type-animation';
-import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
-
+import { BrowserView, isBrowser } from 'react-device-detect';
+import MyPDF from './../../src/assets/file/Mounir.online.pdf';
 export const Banner = () => {
     const px = isBrowser ? "65px" : "30px";
 
@@ -39,15 +37,14 @@ export const Banner = () => {
                                     />
                                     <p>Je suis un ingénieur de recherche et développement passionné par le développement de logiciels, je connais différentes choses dans différents domaines et j'applique ces connaissances dans ma vie de tous les jours, non seulement au travail mais aussi dans chaque activité que je fais dans ma vie ! Je suis ravi de partager avec vous mon parcours en tant qu'ingénieur R&D et un passionné de sportet des mangas.
                                     </p>
-                                    <a class="icon-link">
-                                        <svg className="bi" aria-hidden="true"><use href={download}></use></svg>
-                                        Télecharger mon CV
+                                    <a className="btn btn-primary" href={MyPDF} download={MyPDF}>
+                                        Télecharger mon CV <i class="bi bi-download"></i>
                                     </a>
                                 </div>}
                         </TrackVisibility>
                     </Col>
                     <Col xs={12} md={6} xl={5}>
-                        <BrowserView><img src={headerImg} alt="Header Image" /></BrowserView>
+                        <BrowserView><img src={headerImg} alt="" /></BrowserView>
                     </Col>
                 </Row>
             </Container>

@@ -6,7 +6,7 @@ export const UnderConstruction = () => {
         <Col sm={12} md={12}>
             <div className="work-in-progress">
                 <h3>This section is under construction</h3>
-                <img src={WorkInProgress} />
+                <img src={WorkInProgress} alt="" />
             </div>
         </Col>
     )
