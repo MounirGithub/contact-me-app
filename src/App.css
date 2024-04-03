@@ -555,6 +555,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .proj-txtx h4 {
 	font-size: 30px;
+	color: #E8E8EF;
 	font-weight: 700;
 	letter-spacing: 0.8px;
 	line-height: 1.1em;
@@ -562,6 +563,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .proj-txtx span {
 	font-style: italic;
+	color: #f45532;
 	font-weight: 400;
 	font-size: 15px;
 	letter-spacing: 0.8px;

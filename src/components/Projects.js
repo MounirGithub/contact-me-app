@@ -1,44 +1,45 @@
-import { Col, Container, Row, Tab, Nav } from "react-bootstrap";
+import { Col, Container, Row, Tab } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import { UnderConstruction } from "./UnderConstruction";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
+import projImg4 from "../assets/img/project-img4.png";
+import projImg5 from "../assets/img/project-img5.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
 export const Projects = () => {
 	const projects = [
 		{
-			title: "Business Startup",
-			description: "Design & Development",
+			title: "Portfolio",
+			description: "Vous êtes actuellement sur mon portfolio",
 			imgUrl: projImg1,
+			url: "https://github.com/MounirGithub/contact-me-app",
 		},
 		{
-			title: "Business Startup",
-			description: "Design & Development",
+			title: "Jeux de cartes",
+			description: "Développement d'un service web Spring qui expose un ENDPoint pour tirer des cartes ou les trier",
 			imgUrl: projImg2,
+			url: "https://github.com/MounirGithub/cardGame",
 		},
 		{
-			title: "Business Startup",
-			description: "Design & Development",
+			title: "Outil de facturation dans un magasin de DVD",
+			description: "Développement d'un service web Spring",
 			imgUrl: projImg3,
+			url: "https://github.com/MounirGithub/facturation",
 		},
 		{
-			title: "Business Startup",
-			description: "Design & Development",
-			imgUrl: projImg1,
+			title: "Vision App",
+			description: "Développement d'une IHM react pour entrainer les yeux",
+			imgUrl: projImg4,
+			url: "https://github.com/MounirGithub/vision-app",
 		},
 		{
-			title: "Business Startup",
-			description: "Design & Development",
-			imgUrl: projImg2,
-		},
-		{
-			title: "Business Startup",
-			description: "Design & Development",
-			imgUrl: projImg3,
+			title: "Kanban personnel",
+			description: "Suite à une formation Udemy React/Spring, j'ai appris à developper un Kanban",
+			imgUrl: projImg5,
+			url: "https://github.com/MounirGithub/PersonnalKanbanTool",
 		},
 	];
 
@@ -49,52 +50,23 @@ export const Projects = () => {
 					<Col>
 						<TrackVisibility once>
 							{({ isVisible }) =>
-								<div className={isVisible ? "animate__animated animate__fadeInUp" : ""}>
-									<h2>Projects</h2>
-									<p>This is a collection of projects I made clasified by the different technologies in which they were built. Please note that "Vanilla" projects include different languages/technologies without the use of frameworks nor environments</p>
+								<div className={isVisible ? "animate__animated" : ""}>
+									<h2>Réalisations</h2>
+
+									<Tab.Container id="projects-tabs" defaultActiveKey="first">
+										<Row>
+											{projects.map((project, index) => {
+												return <ProjectCard key={index} {...project} />;
+											})}
+										</Row>
+									</Tab.Container>
 								</div>
 							}
 						</TrackVisibility>
-						<Tab.Container id="projects-tabs" defaultActiveKey="first">
-							<Nav
-								variant="pills"
-								className="nav-pills mb-5 justify-content-center align-items-center"
-								id="pills-tab"
-							>
-								<Nav.Item>
-									<Nav.Link eventKey="first">React</Nav.Link>
-								</Nav.Item>
-								<Nav.Item>
-									<Nav.Link eventKey="second">Spring</Nav.Link>
-								</Nav.Item>
-								<Nav.Item>
-									<Nav.Link eventKey="third">Vanilla</Nav.Link>
-								</Nav.Item>
-							</Nav>
-							<Tab.Content>
-								<Tab.Pane eventKey="first">
-									<Row>
-										{projects.map((project, index) => {
-											return <ProjectCard key={index} {...project} />;
-										})}
-									</Row>
-								</Tab.Pane>
-								<Tab.Pane eventKey="second">
-									<Row>
-										<UnderConstruction></UnderConstruction>
-									</Row>
-								</Tab.Pane>
-								<Tab.Pane eventKey="third">
-									<Row>
-										<UnderConstruction></UnderConstruction>
-									</Row>
-								</Tab.Pane>
-							</Tab.Content>
-						</Tab.Container>
 					</Col>
 				</Row>
 			</Container>
-			<img className="background-image-right" src={colorSharp2}></img>
+			<img className="background-image-right" src={colorSharp2} alt=""></img>
 		</section>
 	);
 };
