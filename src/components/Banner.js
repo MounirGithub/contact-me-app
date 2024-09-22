@@ -13,38 +13,39 @@ export const Banner = () => {
             <Container>
                 <Row className="align-items-center">
                     <Col xs={12} md={6} xl={7}>
-                        <TrackVisibility once>
-                            {({ isVisible }) =>
-                                <div className={isVisible ? "animate__animated animate__fadeInUp" : ""}>
-                                    <span className="tagline">Bienvenue dans mon espace</span>
-                                    <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">{`Bonjour! Je suis`}</h1>
-                                    <TypeAnimation
-                                        sequence={[
-                                            'Mounir', // Types 'One'
-                                            200, // Waits 2s
-                                            'BENABDERRAHMANE', // Deletes 'One' and types 'Two'
-                                            400, // Waits 3ms
-                                            'ingénieur en R&D',
-                                            200,
-                                            () => {
-                                                console.log('Sequence completed');
-                                            },
-                                        ]}
-                                        wrapper="span"
-                                        cursor={true}
-                                        repeat={Infinity}
-                                        style={{ fontSize: px, display: 'inline-block' }}
-                                    />
-                                    <p>Je suis un ingénieur de recherche et développement passionné par le développement de logiciels, je connais différentes choses dans différents domaines et j'applique ces connaissances dans ma vie de tous les jours, non seulement au travail mais aussi dans chaque activité que je fais dans ma vie ! Je suis ravi de partager avec vous mon parcours en tant qu'ingénieur R&D et un passionné de sportet des mangas.
-                                    </p>
-                                    <a className="btn btn-primary" href={MyPDF} download={MyPDF}>
-                                        Télecharger mon CV <i class="bi bi-download"></i>
-                                    </a>
-                                </div>}
-                        </TrackVisibility>
+                        <div className="animate__animated animate__fadeInLeft">
+                            <div className="tagline">Welcome to my space</div>
+                            <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">{`Hello! I am`}</h1>
+                            <TypeAnimation
+                                sequence={[
+                                    'Mounir', // Types 'One'
+                                    200, // Waits 2s
+                                    'BENABDERRAHMANE', // Deletes 'One' and types 'Two'
+                                    400, // Waits 3ms
+                                    'R&D engineer',
+                                    200,
+                                    () => {
+                                        console.log('Sequence completed');
+                                    },
+                                ]}
+                                wrapper="h2"
+                                cursor={true}
+                                repeat={Infinity}
+                                style={{ fontSize: px, display: 'inline-block', color: '#ff6347', fontWeight: 'bold' }}
+                            />
+                            <p>I am a research and development engineer passionate about software development. I know different things in different fields and apply this knowledge in my daily life, not only at work but also in every activity I do in my life! I am delighted to share with you my journey as an R&D engineer and a sports and manga enthusiast.
+                            </p>
+                            <a className="btn btn-primary" href={MyPDF} download={MyPDF}>
+                                Download my CV <i className="bi bi-download"></i>
+                            </a>
+                        </div>
                     </Col>
                     <Col xs={12} md={6} xl={5}>
-                        <BrowserView><img src={headerImg} alt="" /></BrowserView>
+                        <div className="animate__animated animate__fadeInRight">
+                            <BrowserView>
+                                <img src={headerImg} alt="Header" />
+                            </BrowserView>
+                        </div>
                     </Col>
                 </Row>
             </Container>

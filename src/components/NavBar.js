@@ -44,7 +44,7 @@ export const NavBar = ({ firstItemRef }) => {
                         <a class="navbar-brand" href="#">
                             <i class="fab fa-github fa-2x mx-3 ps-1"></i>
                         </a>
-                        <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Acceuil</Nav.Link>
+                        <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
                         <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Skills</Nav.Link>
                         <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
                     </Nav>
@@ -53,7 +53,7 @@ export const NavBar = ({ firstItemRef }) => {
                             <a href="https://www.linkedin.com/in/benmounir/"><img src={navIcon1} alt="" /></a>
                             <a href="https://github.com/MounirGithub"><img src={navIcon2} alt="" /></a>
                         </div>
-                        <button className="vvd" onClick={() => firstItemRef.current.scrollIntoView()}><span>Me contacter</span></button>
+                        <button className="vvd" onClick={() => firstItemRef.current.scrollIntoView()}><span>Contact Me</span></button>
                     </span>
                 </Navbar.Collapse>
             </Container>

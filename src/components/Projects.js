@@ -7,7 +7,10 @@ import projImg3 from "../assets/img/project-img3.png";
 import projImg4 from "../assets/img/project-img4.png";
 import projImg5 from "../assets/img/project-img5.png";
 import 'animate.css';
-import TrackVisibility from 'react-on-screen';
+import { useInView } from 'react-intersection-observer';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { Navigation } from 'swiper/modules';
 
 export const Projects = () => {
 	const projects = [
@@ -43,26 +46,33 @@ export const Projects = () => {
 		},
 	];
 
+	const { ref, inView } = useInView({
+		triggerOnce: true,
+		threshold: 0.1,
+	});
+
 	return (
 		<section className="project" id="projects">
 			<Container>
 				<Row>
 					<Col>
-						<TrackVisibility once>
-							{({ isVisible }) =>
-								<div className={isVisible ? "animate__animated" : ""}>
-									<h2>Réalisations</h2>
+						<div ref={ref} className={inView ? "animate__animated animate__fadeInRight" : ""}>
+							<h2>Projects</h2>
 
-									<Tab.Container id="projects-tabs" defaultActiveKey="first">
-										<Row>
-											{projects.map((project, index) => {
-												return <ProjectCard key={index} {...project} />;
-											})}
-										</Row>
-									</Tab.Container>
-								</div>
-							}
-						</TrackVisibility>
+							<Swiper
+								spaceBetween={50}
+								slidesPerView={3}
+								navigation
+								scrollbar={{ draggable: true }}
+								modules={[Navigation]}
+							>
+								{projects.map((project, index) => (
+									<SwiperSlide key={index}>
+										<ProjectCard {...project} />
+									</SwiperSlide>
+								))}
+							</Swiper>
+						</div>
 					</Col>
 				</Row>
 			</Container>

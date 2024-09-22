@@ -2,6 +2,7 @@ import './App.css';
 import { NavBar } from './components/NavBar';
 import { Banner } from './components/Banner';
 import { Skills } from './components/Skills';
+import { Photos } from './components/Photos';
 import { Projects } from './components/Projects';
 import { Footer } from './components/Footer';
 import { ContactForm } from './components/ContactForm';
@@ -31,8 +32,9 @@ function App() {
 
         <NavBar firstItemRef={firstItemRef} />
         <Banner />
-        <Skills></Skills>
         <Projects></Projects>
+        <Skills></Skills>
+        <Photos></Photos>
         <ContactForm firstItemRef={firstItemRef} />
         <Footer />
       </div>

@@ -435,6 +435,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .project {
 	padding: 120px 0;
 	position: relative;
+	align-items: center;
 }
 
 .project h2 {
