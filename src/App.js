@@ -34,7 +34,6 @@ function App() {
         <Banner />
         <Projects></Projects>
         <Skills></Skills>
-        <Photos></Photos>
         <ContactForm firstItemRef={firstItemRef} />
         <Footer />
       </div>

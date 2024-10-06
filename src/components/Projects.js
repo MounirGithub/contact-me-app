@@ -15,6 +15,12 @@ import { Navigation } from 'swiper/modules';
 export const Projects = () => {
 	const projects = [
 		{
+			title: "Kanban personnel",
+			description: "Suite à une formation Udemy React/Spring, j'ai appris à developper un Kanban",
+			imgUrl: projImg5,
+			url: "https://github.com/MounirGithub/PersonnalKanbanTool",
+		},
+		{
 			title: "Portfolio",
 			description: "Vous êtes actuellement sur mon portfolio",
 			imgUrl: projImg1,
@@ -38,12 +44,6 @@ export const Projects = () => {
 			imgUrl: projImg4,
 			url: "https://github.com/MounirGithub/vision-app",
 		},
-		{
-			title: "Kanban personnel",
-			description: "Suite à une formation Udemy React/Spring, j'ai appris à developper un Kanban",
-			imgUrl: projImg5,
-			url: "https://github.com/MounirGithub/PersonnalKanbanTool",
-		},
 	];
 
 	const { ref, inView } = useInView({
@@ -58,7 +58,7 @@ export const Projects = () => {
 					<Col>
 						<div ref={ref} className={inView ? "animate__animated animate__fadeInRight" : ""}>
 							<h2>Projects</h2>
-
+							<p>Swipe left or right to view more projects</p>
 							<Swiper
 								spaceBetween={50}
 								slidesPerView={3}
