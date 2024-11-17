@@ -1,12 +1,20 @@
 import { Col, Container, Row } from "react-bootstrap";
 import headerImg from "../assets/img/header-img.svg";
 import 'animate.css';
-import TrackVisibility from 'react-on-screen';
 import { TypeAnimation } from 'react-type-animation';
 import { BrowserView, isBrowser } from 'react-device-detect';
-import MyPDF from './../../src/assets/file/Mounir.online.pdf';
+import { useState } from 'react';
+import { Popup } from './Popup';
+
+
 export const Banner = () => {
     const px = isBrowser ? "65px" : "30px";
+
+    const [showPopup, setShowPopup] = useState(false);
+
+    const togglePopup = () => {
+        setShowPopup(!showPopup);
+    };
 
     return (
         <section className="banner" id="home">
@@ -35,9 +43,9 @@ export const Banner = () => {
                             />
                             <p>I am a research and development engineer passionate about software development. I know different things in different fields and apply this knowledge in my daily life, not only at work but also in every activity I do in my life! I am delighted to share with you my journey as an R&D engineer and a sports and manga enthusiast.
                             </p>
-                            <a className="btn btn-primary" href={MyPDF} download={MyPDF}>
-                                Download my CV <i className="bi bi-download"></i>
-                            </a>
+                            <button className="btn btn-secondary" onClick={togglePopup}>
+                                Download CV
+                            </button>
                         </div>
                     </Col>
                     <Col xs={12} md={6} xl={5}>
@@ -49,6 +57,8 @@ export const Banner = () => {
                     </Col>
                 </Row>
             </Container>
+            <Popup show={showPopup} onClose={togglePopup}>
+            </Popup>
         </section>
     )
 }

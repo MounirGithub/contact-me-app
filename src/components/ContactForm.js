@@ -46,7 +46,9 @@ export const ContactForm = ({ firstItemRef }) => {
   };
 
   return (
-    <Container className='ContactForm d-flex justify-content-center' ref={firstItemRef} >
+    <Container className='ContactForm d-flex justify-content-center' 
+    style={{minHeight: '80vh'}}
+    ref={firstItemRef} >
       <Row className='justify-content-center'>
         <Col md={30}>
           <h2 className='text-center mb-4'>Contact me</h2>

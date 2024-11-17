@@ -56,13 +56,20 @@ export const Projects = () => {
 			<Container>
 				<Row>
 					<Col>
-						<div ref={ref} className={inView ? "animate__animated animate__fadeInRight" : ""}>
+						<div ref={ref}>
 							<h2>Projects</h2>
 							<p>Swipe left or right to view more projects</p>
+							<div className="swiper-buttons">
+								<button className="swiper-button-prev"></button>
+								<button className="swiper-button-next"></button>
+							</div>
 							<Swiper
 								spaceBetween={50}
 								slidesPerView={3}
-								navigation
+								navigation={{
+									prevEl: '.swiper-button-prev',
+									nextEl: '.swiper-button-next',
+								}}
 								scrollbar={{ draggable: true }}
 								modules={[Navigation]}
 							>
