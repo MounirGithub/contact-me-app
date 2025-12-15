@@ -1,13 +1,10 @@
+import { SwiperSlide } from "swiper/react";
+import "swiper/css";
 
-import { SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-
-export const PhotoCard = (...image) => {
-    return (
-        < SwiperSlide >
-            <p>{image.src}</p>
-            <p>{image.default}</p>
-            <img key={image.index} src={image.default} alt={`${image.index}`} />
-        </SwiperSlide>
-    )
-}
+export const PhotoCard = ({ src, alt }) => {
+  return (
+    <SwiperSlide>
+      <img src={src} alt={alt || "Photo"} />
+    </SwiperSlide>
+  );
+};

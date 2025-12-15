@@ -1,0 +1,7 @@
+.scrolled{background:rgba(0,0,0,.6);backdrop-filter:blur(6px);transition:background .2s ease}
+.logo{height:36px}
+.nav{}
+.link{color:#fff !important;margin-right:.5rem}
+.active{font-weight:700;border-bottom:2px solid #0d6efd}
+.socialIcon{display:flex;gap:.5rem}
+.cta{background:#0d6efd;color:#fff;border:0;border-radius:20px;padding:.35rem .85rem;font-weight:600}

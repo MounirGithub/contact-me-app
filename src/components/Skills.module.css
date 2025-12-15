@@ -1,0 +1,9 @@
+.skillBx{padding:1rem;background:rgba(255,255,255,.05);border-radius:12px}
+.slider{margin-top:.75rem}
+.item{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:.75rem}
+.iconWrap{width:96px;height:96px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px}
+.iconWrap img{max-width:64px;max-height:64px}
+.badge{width:64px;height:64px;border-radius:999px;background:rgba(13,110,253,.12);color:#0d6efd;display:flex;align-items:center;justify-content:center;font-weight:700}
+.name{margin-top:.5rem;font-weight:700}
+.fadeWrap{opacity:0;transform:translateY(16px);transition:opacity .5s ease, transform .5s ease}
+.visible{opacity:1;transform:none}

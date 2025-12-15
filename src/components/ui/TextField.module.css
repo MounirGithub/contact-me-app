@@ -1,0 +1,5 @@
+.field{display:flex;flex-direction:column;gap:.25rem;margin-bottom:1rem}
+.label{font-weight:600}
+.input{border:1px solid #ced4da;border-radius:6px;padding:.5rem .75rem}
+.error{border-color:#dc3545}
+.feedback{color:#dc3545;font-size:.85rem}

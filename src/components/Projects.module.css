@@ -1,0 +1,6 @@
+.swiperButtons{display:flex;gap:.5rem;margin-bottom:.75rem}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+@media (max-width: 1024px){.grid{grid-template-columns:repeat(2,1fr)}}
+.fadeWrap{opacity:0;transform:translateY(16px);transition:opacity .5s ease, transform .5s ease}
+.visible{opacity:1;transform:none}
+@media (max-width: 600px){.grid{grid-template-columns:1fr}}

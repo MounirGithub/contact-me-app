@@ -2,9 +2,7 @@ import './App.css';
 import { NavBar } from './components/NavBar';
 import { Banner } from './components/Banner';
 import { Skills } from './components/Skills';
-import { Photos } from './components/Photos';
 import { Projects } from './components/Projects';
-import { Footer } from './components/Footer';
 import { ContactForm } from './components/ContactForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useRef } from 'react';
@@ -35,7 +33,6 @@ function App() {
         <Projects></Projects>
         <Skills></Skills>
         <ContactForm firstItemRef={firstItemRef} />
-        <Footer />
       </div>
     </BrowserRouter>
   );

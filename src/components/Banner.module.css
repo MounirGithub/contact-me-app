@@ -1,0 +1,4 @@
+.titleAnim{display:inline-block;color:#ff6347;font-weight:bold}
+.fadeWrapLeft{opacity:0;transform:translateX(-24px);transition:opacity .5s ease, transform .5s ease}
+.fadeWrapRight{opacity:0;transform:translateX(24px);transition:opacity .5s ease, transform .5s ease}
+.visible{opacity:1;transform:none}

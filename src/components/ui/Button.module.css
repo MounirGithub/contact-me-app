@@ -1,0 +1,5 @@
+.button{appearance:none;border:0;cursor:pointer;border-radius:8px;padding:0.6rem 1rem;font-weight:600;transition:background-color .2s ease,opacity .2s ease}
+.primary{background:#0d6efd;color:#fff}
+.secondary{background:#6c757d;color:#fff}
+.ghost{background:transparent;color:#0d6efd;border:1px solid #0d6efd}
+.button:disabled{opacity:.6;cursor:not-allowed}
