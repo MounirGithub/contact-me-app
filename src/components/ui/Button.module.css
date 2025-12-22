@@ -1,5 +1,10 @@
-.button{appearance:none;border:0;cursor:pointer;border-radius:8px;padding:0.6rem 1rem;font-weight:600;transition:background-color .2s ease,opacity .2s ease}
-.primary{background:#0d6efd;color:#fff}
-.secondary{background:#6c757d;color:#fff}
-.ghost{background:transparent;color:#0d6efd;border:1px solid #0d6efd}
+.button{appearance:none;border:0;cursor:pointer;border-radius:10px;padding:0.65rem 1.05rem;font-weight:600;transition:background-color .2s ease,opacity .2s ease,transform .05s ease;box-shadow:0 1px 2px rgba(0,0,0,.15)}
+.button:active{transform:scale(.99)}
+.primary{background:linear-gradient(135deg,#6a8dff,#9b6cff);color:#fff}
+.primary:hover{filter:brightness(1.05)}
+.secondary{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(6px)}
+.secondary:hover{background:rgba(255,255,255,.12)}
+.ghost{background:transparent;color:#6a8dff;border:1px solid #6a8dff}
+.ghost:hover{background:rgba(106,141,255,.1)}
 .button:disabled{opacity:.6;cursor:not-allowed}
+.button:focus{outline:2px solid rgba(106,141,255,.35);outline-offset:2px}

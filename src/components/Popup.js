@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Mypdf from "../assets/file/Mounir.online.pdf";
 import styles from "./Popup.module.css";
+import Button from "./ui/Button";
 
 export const Popup = ({ show, onClose }) => {
   const [formData, setFormData] = useState({ name: "", email: "" });
@@ -79,25 +80,21 @@ export const Popup = ({ show, onClose }) => {
               className={styles.input}
             />
             <div className={styles.actions}>
-              <button type="submit" className={styles.primary}>
+              <Button type="submit" variant="primary">
                 Submit
-              </button>
-              <button
-                type="button"
-                className={styles.secondary}
-                onClick={onClose}
-              >
+              </Button>
+              <Button type="button" variant="secondary" onClick={onClose}>
                 Cancel
-              </button>
+              </Button>
             </div>
           </form>
         ) : (
           <div className={styles.success}>
             <h2>Success!</h2>
             <p>Thank you! CV is being downloaded.</p>
-            <button className={styles.secondary} onClick={onClose}>
+            <Button variant="secondary" onClick={onClose}>
               Close
-            </button>
+            </Button>
           </div>
         )}
       </div>

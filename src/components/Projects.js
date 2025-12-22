@@ -17,38 +17,38 @@ import { Section } from "./ui/Section";
 export const Projects = () => {
   const projects = [
     {
-      title: "Kanban personnel",
+      title: "Personal Kanban",
       description:
-        "Suite à une formation Udemy React/Spring, j'ai appris à developper un Kanban",
+        "Following a Udemy React/Spring course, I built a personal Kanban.",
       imgUrl: projImg5,
       url: "https://github.com/MounirGithub/PersonnalKanbanTool",
       tags: ["React", "Spring", "Kanban"],
     },
     {
       title: "Portfolio",
-      description: "Vous êtes actuellement sur mon portfolio",
+      description: "You are currently viewing my portfolio.",
       imgUrl: projImg1,
       url: "https://github.com/MounirGithub/contact-me-app",
       tags: ["React", "Bootstrap"],
     },
     {
-      title: "Jeux de cartes",
+      title: "Card Game Service",
       description:
-        "Développement d'un service web Spring qui expose un ENDPoint pour tirer des cartes ou les trier",
+        "Developed a Spring web service exposing endpoints to draw and sort cards.",
       imgUrl: projImg2,
       url: "https://github.com/MounirGithub/cardGame",
       tags: ["Spring", "REST"],
     },
     {
-      title: "Outil de facturation dans un magasin de DVD",
-      description: "Développement d'un service web Spring",
+      title: "Billing Tool for a DVD Store",
+      description: "Developed a Spring web service.",
       imgUrl: projImg3,
       url: "https://github.com/MounirGithub/facturation",
       tags: ["Spring", "Billing"],
     },
     {
       title: "Vision App",
-      description: "Développement d'une IHM react pour entrainer les yeux",
+      description: "Built a React UI to train eye tracking.",
       imgUrl: projImg4,
       url: "https://github.com/MounirGithub/vision-app",
       tags: ["React", "UX"],

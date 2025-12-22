@@ -6,6 +6,7 @@ import { BrowserView, isBrowser } from "react-device-detect";
 import { useEffect, useRef, useState } from "react";
 import { Popup } from "./Popup";
 import { Button } from "./ui/Button";
+import { Text } from "./ui/Text";
 import styles from "./Banner.module.css";
 
 export const Banner = () => {
@@ -63,14 +64,14 @@ export const Banner = () => {
                 className={styles.titleAnim}
                 style={{ fontSize: px }}
               />
-              <p>
+              <Text variant="lead">
                 I am a research and development engineer passionate about
                 software development. I know different things in different
                 fields and apply this knowledge in my daily life, not only at
                 work but also in every activity I do in my life! I am delighted
                 to share with you my journey as an R&D engineer and a sports and
                 manga enthusiast.
-              </p>
+              </Text>
               <Button variant="secondary" onClick={togglePopup}>
                 Download CV
               </Button>

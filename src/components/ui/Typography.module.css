@@ -1,0 +1,5 @@
+/* Shared text styles for a consistent portfolio mood */
+.body{color:rgba(255,255,255,.88);line-height:1.7}
+.lead{color:rgba(255,255,255,.92);line-height:1.8;font-size:1.05rem}
+.muted{color:rgba(255,255,255,.72)}
+.title{color:#fff;font-weight:800;letter-spacing:.2px}
