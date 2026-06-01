@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+    --bg-primary: #020c1b;
+    --bg-secondary: #0a1929;
+    --bg-tertiary: #132f4c;
+    --text-primary: #e6f1ff;
+    --text-secondary: #8892b0;
+    --text-muted: #495670;
+    --accent: #00e5ff;
+    --accent-secondary: #ffab40;
+    --accent-dim: rgba(0, 229, 255, 0.08);
+    --accent-glow: rgba(0, 229, 255, 0.35);
+    --gradient-1: #00e5ff;
+    --gradient-2: #00b8d4;
+    --gradient-3: #ffab40;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --transition: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+::selection {
+    background: var(--accent);
+    color: var(--bg-primary);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-dim);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}

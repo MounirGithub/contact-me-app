@@ -1,43 +1,52 @@
-import './App.css';
-import { NavBar } from './components/NavBar';
-import { Banner } from './components/Banner';
-import { Skills } from './components/Skills';
-import { Photos } from './components/Photos';
-import { Projects } from './components/Projects';
-import { Footer } from './components/Footer';
-import { ContactForm } from './components/ContactForm';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { useRef } from 'react';
-import { BrowserView, MobileView } from 'react-device-detect';
-import "bootstrap-icons/font/bootstrap-icons.css";
-import { BrowserRouter } from 'react-router-dom'
-import mobileBackGround from './assets/pexels-cup-of-couple-6177737 (Original).mp4';
-import backGround from './assets/production_id_4990233 (1080p).mp4';
+import './styles/globals.css';
+import './styles/App.css';
+import { useState, useCallback } from 'react';
+import { Loader } from './components/Loader';
+import { CustomCursor } from './components/CustomCursor';
+import { Navbar } from './components/Nav';
+import { Hero } from './components/Hero';
+import { SkillsSection } from './components/SkillsSection';
+import { Experience } from './components/Experience';
+import { ProjectsSection } from './components/ProjectsSection';
+import { Contact } from './components/Contact';
+import { AmbientBackground } from './components/AmbientBackground';
 
 function App() {
-  const firstItemRef = useRef(null);
+  const [loading, setLoading] = useState(true);
+
+  const handleLoaderComplete = useCallback(() => {
+    setLoading(false);
+  }, []);
 
   return (
-    <BrowserRouter>
-      <div className="App">
-        <BrowserView>
-          <video autoPlay loop muted id="video" className='blurred'>
-            <source src={backGround} type="video/mp4"></source></video>
-        </BrowserView>
-
-        <MobileView>
-          <video autoPlay loop muted id="video" className='blurred'>
-            <source src={mobileBackGround} type="video/mp4"></source></video>
-        </MobileView>
-
-        <NavBar firstItemRef={firstItemRef} />
-        <Banner />
-        <Projects></Projects>
-        <Skills></Skills>
-        <ContactForm firstItemRef={firstItemRef} />
-        <Footer />
-      </div>
-    </BrowserRouter>
+    <>
+      <Loader onComplete={handleLoaderComplete} />
+      {!loading && (
+        <>
+          <CustomCursor />
+          <Navbar />
+          <main className="ocean-depth">
+            <Hero />
+            <div className="section-wrapper section-wrapper--skills">
+              <AmbientBackground variant="skills" />
+              <SkillsSection />
+            </div>
+            <div className="section-wrapper section-wrapper--experience">
+              <AmbientBackground variant="experience" />
+              <Experience />
+            </div>
+            {/* <div className="section-wrapper section-wrapper--projects">
+              <AmbientBackground variant="projects" />
+              <ProjectsSection />
+            </div> */}
+            <div className="section-wrapper section-wrapper--contact">
+              <AmbientBackground variant="projects" />
+              <Contact />
+            </div>
+          </main>
+        </>
+      )}
+    </>
   );
 }
 
