@@ -394,7 +394,8 @@
     font-weight: 700;
     color: var(--accent);
     margin-bottom: 1.5rem;
-    min-height: 3rem;
+    min-height: 4.5rem;
+    display: block;
     opacity: 0;
     animation: fadeInUp 1s var(--transition) 0.5s forwards;
 }
