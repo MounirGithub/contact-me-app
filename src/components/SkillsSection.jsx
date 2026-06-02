@@ -1,6 +1,15 @@
 import { AnimatedSection } from './AnimatedSection';
 import styles from './Skills.module.css';
 
+const GLINTS_TOP = Array.from({ length: 10 }, (_, i) => ({
+    id: i,
+    left: 5 + Math.random() * 90,
+    top: 15 + Math.random() * 55,
+    delay: Math.random() * 8,
+    duration: 2 + Math.random() * 3,
+    size: 2 + Math.random() * 2.5,
+}));
+
 const skillsRow1 = [
     { name: 'React', icon: '⚛️' },
     { name: 'Angular', icon: '🅰️' },
@@ -38,7 +47,30 @@ const MarqueeRow = ({ skills, reverse }) => (
 
 export const SkillsSection = () => {
     return (
-        <section className="section" id="skills">
+        <section className={`section ${styles.root}`} id="skills">
+            <div className={styles.wavesTop}>
+                <svg className={styles.wave} viewBox="0 0 1440 120" preserveAspectRatio="none">
+                    <path d="M0,60 C240,100 480,20 720,60 C960,100 1200,20 1440,60 L1440,0 L0,0 Z" />
+                </svg>
+                <svg className={`${styles.wave} ${styles.wave2}`} viewBox="0 0 1440 120" preserveAspectRatio="none">
+                    <path d="M0,80 C360,40 720,100 1080,50 C1260,30 1440,70 1440,70 L1440,0 L0,0 Z" />
+                </svg>
+                {GLINTS_TOP.map((g) => (
+                    <span
+                        key={g.id}
+                        className={styles.glint}
+                        style={{
+                            left: `${g.left}%`,
+                            top: `${g.top}%`,
+                            width: `${g.size}px`,
+                            height: `${g.size}px`,
+                            animationDelay: `${g.delay}s`,
+                            animationDuration: `${g.duration}s`,
+                        }}
+                    />
+                ))}
+            </div>
+
             <AnimatedSection>
                 <h2 className="section__title">Skills</h2>
 

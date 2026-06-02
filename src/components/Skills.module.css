@@ -1,3 +1,93 @@
+.root {
+    position: relative;
+}
+
+.wavesTop {
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 120px;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.wave {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 200%;
+    height: 80px;
+    display: block;
+    animation: waveSlide 18s linear infinite;
+    filter: drop-shadow(0 4px 12px rgba(0, 229, 255, 0.2));
+}
+
+.wave path {
+    fill: var(--bg-primary);
+    opacity: 1;
+    stroke: rgba(0, 229, 255, 0.3);
+    stroke-width: 0.5;
+}
+
+.wave2 {
+    animation-duration: 12s;
+    animation-direction: reverse;
+    filter: drop-shadow(0 4px 18px rgba(0, 229, 255, 0.15));
+}
+
+.wave2 path {
+    fill: var(--bg-primary);
+    opacity: 0.7;
+    stroke: rgba(0, 229, 255, 0.2);
+    stroke-width: 0.4;
+}
+
+@keyframes waveSlide {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.glint {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 253, 220, 0.85) 0%, rgba(0, 229, 255, 0.5) 40%, transparent 70%);
+    animation: glintFlash ease-in-out infinite;
+    pointer-events: none;
+    z-index: 2;
+}
+
+@keyframes glintFlash {
+
+    0%,
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    15% {
+        opacity: 0.9;
+        transform: scale(1.1);
+    }
+
+    30% {
+        opacity: 0.5;
+        transform: scale(0.7);
+    }
+
+    45% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
 .carousel {
     margin-top: 3rem;
     display: flex;

@@ -1,6 +1,16 @@
 import { useMemo } from 'react';
 import { TypeAnimation } from 'react-type-animation';
+import { Moon } from './Moon';
 import styles from './Hero.module.css';
+
+const GLINTS = Array.from({ length: 12 }, (_, i) => ({
+    id: i,
+    left: 5 + Math.random() * 90,
+    top: 20 + Math.random() * 60,
+    delay: Math.random() * 8,
+    duration: 2 + Math.random() * 3,
+    size: 2 + Math.random() * 3,
+}));
 
 export const Hero = () => {
     const stars = useMemo(() => {
@@ -35,6 +45,8 @@ export const Hero = () => {
                 ))}
             </div>
 
+            <Moon />
+
             <div className={styles.content}>
                 <h1 className={styles.name}>Mounir</h1>
                 <TypeAnimation
@@ -68,6 +80,20 @@ export const Hero = () => {
                 <svg className={`${styles.wave} ${styles.wave2}`} viewBox="0 0 1440 120" preserveAspectRatio="none">
                     <path d="M0,80 C360,40 720,100 1080,50 C1260,30 1440,70 1440,70 L1440,120 L0,120 Z" />
                 </svg>
+                {GLINTS.map((g) => (
+                    <span
+                        key={g.id}
+                        className={styles.glint}
+                        style={{
+                            left: `${g.left}%`,
+                            top: `${g.top}%`,
+                            width: `${g.size}px`,
+                            height: `${g.size}px`,
+                            animationDelay: `${g.delay}s`,
+                            animationDuration: `${g.duration}s`,
+                        }}
+                    />
+                ))}
             </div>
         </section>
     );
