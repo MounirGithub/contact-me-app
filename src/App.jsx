@@ -7,6 +7,7 @@ import { Navbar } from './components/Nav';
 import { Hero } from './components/Hero';
 import { SkillsSection } from './components/SkillsSection';
 import { Experience } from './components/Experience';
+import { ProjectsSection } from './components/ProjectsSection';
 import { Contact } from './components/Contact';
 import { AmbientBackground } from './components/AmbientBackground';
 import { ScrollIndicator } from './components/ScrollIndicator';
@@ -37,6 +38,10 @@ function App() {
             <div className="section-wrapper section-wrapper--experience">
               <AmbientBackground variant="experience" />
               <Experience />
+            </div>
+            <div className="section-wrapper section-wrapper--projects">
+              <AmbientBackground variant="projects" />
+              <ProjectsSection />
             </div>
             <div className="section-wrapper section-wrapper--contact">
               <AmbientBackground variant="projects" />

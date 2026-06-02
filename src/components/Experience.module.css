@@ -33,10 +33,13 @@
 }
 
 @keyframes pulse {
-    0%, 100% {
+
+    0%,
+    100% {
         box-shadow: 0 0 10px var(--accent-glow);
         transform: scale(1);
     }
+
     50% {
         box-shadow: 0 0 20px var(--accent-glow), 0 0 40px rgba(0, 229, 255, 0.15);
         transform: scale(1.2);

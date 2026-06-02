@@ -1,0 +1,153 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--bg-secondary);
+    border: 1px solid rgba(0, 229, 255, 0.08);
+    height: 320px;
+    transition: all 0.5s var(--transition);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    display: block;
+}
+
+.featured {
+    grid-column: 1 / -1;
+    height: 360px;
+}
+
+.cardIndex {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: rgba(0, 229, 255, 0.35);
+    z-index: 2;
+    letter-spacing: 0.05em;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: var(--accent);
+    box-shadow: 0 25px 60px rgba(0, 229, 255, 0.15), 0 0 40px rgba(0, 229, 255, 0.05);
+}
+
+.cardBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    transition: all 0.5s;
+    filter: saturate(0.7) brightness(0.8);
+}
+
+.card:hover .cardBg {
+    opacity: 0.2;
+    transform: scale(1.08);
+    filter: saturate(1) brightness(0.6);
+}
+
+.cardContent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    background: linear-gradient(transparent 0%, rgba(2, 12, 27, 0.85) 40%, rgba(2, 12, 27, 0.98) 100%);
+    transform: translateY(35%);
+    transition: transform 0.4s var(--transition);
+}
+
+.card:hover .cardContent {
+    transform: translateY(0);
+}
+
+.cardTitle {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.cardDesc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+    opacity: 0;
+    transition: opacity 0.3s 0.1s;
+}
+
+.card:hover .cardDesc {
+    opacity: 1;
+}
+
+.cardTechs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+    opacity: 0;
+    transition: opacity 0.3s 0.1s;
+}
+
+.card:hover .cardTechs {
+    opacity: 1;
+}
+
+.tech {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.6rem;
+    background: rgba(0, 229, 255, 0.1);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    border-radius: 20px;
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.cardLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s 0.2s;
+}
+
+.card:hover .cardLink {
+    opacity: 1;
+}
+
+.disclaimer {
+    text-align: center;
+    margin-top: 2.5rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    opacity: 0.6;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featured {
+        grid-column: auto;
+        height: 300px;
+    }
+}

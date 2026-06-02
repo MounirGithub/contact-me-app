@@ -21,10 +21,21 @@
 }
 
 @keyframes orbFloat {
-    0% { transform: translate(-50%, 0) scale(1); }
-    33% { transform: translate(-50%, -20px) scale(1.05); }
-    66% { transform: translate(-50%, 15px) scale(0.95); }
-    100% { transform: translate(-50%, -10px) scale(1.02); }
+    0% {
+        transform: translate(-50%, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(-50%, -20px) scale(1.05);
+    }
+
+    66% {
+        transform: translate(-50%, 15px) scale(0.95);
+    }
+
+    100% {
+        transform: translate(-50%, -10px) scale(1.02);
+    }
 }
 
 .container {
