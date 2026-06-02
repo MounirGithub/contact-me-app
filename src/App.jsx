@@ -1,5 +1,5 @@
 import './styles/globals.css';
-import './styles/App.css';
+import './styles/layout.css';
 import { useState, useCallback } from 'react';
 import { Loader } from './components/Loader';
 import { CustomCursor } from './components/CustomCursor';

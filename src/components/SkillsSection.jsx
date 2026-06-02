@@ -1,4 +1,5 @@
 import { useInView } from 'react-intersection-observer';
+import styles from './Skills.module.css';
 
 const skillsRow1 = [
     { name: 'React', icon: '⚛️' },
@@ -23,12 +24,12 @@ const skillsRow2 = [
 ];
 
 const MarqueeRow = ({ skills, reverse }) => (
-    <div className="skills__marquee">
-        <div className={`skills__marquee-track ${reverse ? 'skills__marquee-track--reverse' : ''}`}>
+    <div className={styles.marquee}>
+        <div className={`${styles.track} ${reverse ? styles.trackReverse : ''}`}>
             {[...skills, ...skills].map((skill, i) => (
-                <div key={`${skill.name}-${i}`} className="skills__chip">
-                    <span className="skills__chip-icon">{skill.icon}</span>
-                    <span className="skills__chip-name">{skill.name}</span>
+                <div key={`${skill.name}-${i}`} className={styles.chip}>
+                    <span className={styles.chipIcon}>{skill.icon}</span>
+                    <span className={styles.chipName}>{skill.name}</span>
                 </div>
             ))}
         </div>
@@ -43,7 +44,7 @@ export const SkillsSection = () => {
             <div ref={ref} className={`reveal ${inView ? 'visible' : ''}`}>
                 <h2 className="section__title">Skills</h2>
 
-                <div className="skills__carousel">
+                <div className={styles.carousel}>
                     <MarqueeRow skills={skillsRow1} />
                     <MarqueeRow skills={skillsRow2} reverse />
                 </div>

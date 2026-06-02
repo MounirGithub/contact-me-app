@@ -1,0 +1,185 @@
+.root {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: clip;
+    margin-bottom: -2px;
+    z-index: 1;
+    background: linear-gradient(180deg,
+            #000510 0%,
+            #010a1a 30%,
+            #021024 60%,
+            #041c32 85%,
+            #063251 100%);
+}
+
+.sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(ellipse at 30% 20%, rgba(100, 140, 255, 0.04) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 60%, rgba(0, 229, 255, 0.03) 0%, transparent 40%),
+        radial-gradient(ellipse at 50% 90%, rgba(255, 171, 64, 0.04) 0%, transparent 30%);
+}
+
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    background: #ffffff;
+    border-radius: 50%;
+    animation: twinkle ease-in-out infinite;
+}
+
+.star:nth-child(3n) {
+    background: var(--accent);
+}
+
+.star:nth-child(5n) {
+    background: var(--accent-secondary);
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.2;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.4);
+    }
+}
+
+.horizon {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(180deg, transparent 0%, #063251 70%, #0a4068 100%);
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.wave {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 200%;
+    height: 80px;
+    display: block;
+    animation: waveSlide 18s linear infinite;
+    filter: drop-shadow(0 -4px 12px rgba(0, 229, 255, 0.3));
+}
+
+.wave path {
+    fill: #0a4068;
+    opacity: 1;
+    stroke: rgba(0, 229, 255, 0.4);
+    stroke-width: 0.5;
+}
+
+.wave2 {
+    animation-duration: 12s;
+    animation-direction: reverse;
+    filter: drop-shadow(0 -6px 18px rgba(0, 229, 255, 0.25));
+}
+
+.wave2 path {
+    fill: #0c4d7a;
+    opacity: 0.7;
+    stroke: rgba(0, 229, 255, 0.25);
+    stroke-width: 0.4;
+}
+
+@keyframes waveSlide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.name {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 10vw, 8rem);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2), var(--gradient-3));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s var(--transition) 0.3s forwards;
+}
+
+.typed {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    min-height: 4.5rem;
+    display: block;
+    opacity: 0;
+    animation: fadeInUp 1s var(--transition) 0.5s forwards;
+}
+
+.description {
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.7;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s var(--transition) 0.7s forwards;
+}
+
+.cta {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 50px;
+    transition: all 0.3s var(--transition);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s var(--transition) 1s forwards;
+}
+
+.cta:hover {
+    background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+    color: var(--bg-primary);
+    border-color: transparent;
+    box-shadow: 0 0 30px var(--accent-glow), 0 10px 40px rgba(0, 229, 255, 0.15);
+    transform: translateY(-3px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

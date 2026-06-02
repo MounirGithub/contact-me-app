@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import styles from './AmbientBackground.module.css';
 
 export const AmbientBackground = ({ variant }) => {
     const orbs = useMemo(() => {
@@ -21,11 +22,11 @@ export const AmbientBackground = ({ variant }) => {
     }, [variant]);
 
     return (
-        <div className="ambient-bg" aria-hidden="true">
+        <div className={styles.root} aria-hidden="true">
             {orbs.map((orb, i) => (
                 <div
                     key={i}
-                    className="ambient-bg__orb"
+                    className={styles.orb}
                     style={{
                         top: orb.top,
                         left: orb.left,

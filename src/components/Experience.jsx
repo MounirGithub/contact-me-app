@@ -1,4 +1,5 @@
 import { useInView } from 'react-intersection-observer';
+import styles from './Experience.module.css';
 
 // Experience data from LinkedIn
 const experienceData = [
@@ -45,7 +46,7 @@ export const Experience = () => {
         <section className="section" id="experience">
             <h2 className="section__title">Experience</h2>
 
-            <div className="experience__timeline">
+            <div className={styles.timeline}>
                 {experienceData.map((exp, index) => (
                     <ExperienceItem key={index} {...exp} delay={index * 200} />
                 ))}
@@ -60,13 +61,13 @@ const ExperienceItem = ({ date, role, company, description, delay }) => {
     return (
         <div
             ref={ref}
-            className={`experience__item ${inView ? 'visible' : ''}`}
+            className={`${styles.item} ${inView ? styles.visible : ''}`}
             style={{ transitionDelay: `${delay}ms` }}
         >
-            <span className="experience__date">{date}</span>
-            <h3 className="experience__role">{role}</h3>
-            <p className="experience__company">{company}</p>
-            <p className="experience__description">{description}</p>
+            <span className={styles.date}>{date}</span>
+            <h3 className={styles.role}>{role}</h3>
+            <p className={styles.company}>{company}</p>
+            <p className={styles.description}>{description}</p>
         </div>
     );
 };

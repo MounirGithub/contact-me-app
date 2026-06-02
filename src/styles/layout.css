@@ -1,0 +1,122 @@
+/* ===== CUSTOM CURSOR ===== */
+.custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 0.15s var(--transition), opacity 0.3s;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.custom-cursor.visible {
+    opacity: 1;
+}
+
+.custom-cursor.hover {
+    transform: translate(-50%, -50%) scale(2);
+    background: var(--accent-dim);
+}
+
+/* ===== SECTION COMMONS ===== */
+.section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.section__title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 4rem;
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2), var(--gradient-3));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section__title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gradient-1), var(--gradient-2));
+    border-radius: 2px;
+}
+
+/* ===== REVEAL ANIMATION ===== */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s var(--transition), transform 1s var(--transition);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== OCEAN DEPTH ===== */
+.ocean-depth {
+    background: linear-gradient(180deg,
+            #0a4068 0%,
+            #083d63 5%,
+            #06344f 10%,
+            #052c44 20%,
+            #04233a 35%,
+            #031b30 50%,
+            #021526 65%,
+            #010e1c 80%,
+            #000810 100%);
+}
+
+/* ===== SECTION WRAPPER ===== */
+.section-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-wrapper--skills,
+.section-wrapper--experience,
+.section-wrapper--projects,
+.section-wrapper--contact {
+    background: transparent;
+}
+
+.section-wrapper--skills {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.section-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    width: 120%;
+    height: 100%;
+    transform: translateX(-50%);
+    background: radial-gradient(ellipse at 50% 0%, rgba(0, 229, 255, 0.02) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+/* ===== RESPONSIVE SHARED ===== */
+@media (max-width: 768px) {
+    .section {
+        padding: 3.5rem 1.5rem;
+    }
+
+    .custom-cursor {
+        display: none !important;
+    }
+}

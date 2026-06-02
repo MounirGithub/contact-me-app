@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import styles from './Loader.module.css';
 
 export const Loader = ({ onComplete }) => {
     const [hidden, setHidden] = useState(false);
@@ -12,11 +13,11 @@ export const Loader = ({ onComplete }) => {
     }, [onComplete]);
 
     return (
-        <div className={`loader ${hidden ? 'hidden' : 'visible'}`}>
-            <div className="loader__name">Mounir BENABDERRAHMANE</div>
-            <div className="loader__subtitle">AI-Augmented Software Engineer</div>
-            <div className="loader__progress-container">
-                <div className="loader__progress-bar" />
+        <div className={`${styles.root} ${hidden ? styles.hidden : ''}`}>
+            <div className={styles.name}>Mounir BENABDERRAHMANE</div>
+            <div className={styles.subtitle}>AI-Augmented Software Engineer</div>
+            <div className={styles.progressContainer}>
+                <div className={styles.progressBar} />
             </div>
         </div>
     );

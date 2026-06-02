@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import styles from './Nav.module.css';
 
 export const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -20,19 +21,19 @@ export const Navbar = () => {
 
     return (
         <>
-            <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-                <a href="#hero" className="navbar__logo">M.</a>
+            <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
+                <a href="#hero" className={styles.logo}>M.</a>
 
-                <ul className="navbar__links">
+                <ul className={styles.links}>
                     {links.map((link) => (
                         <li key={link.href}>
-                            <a href={link.href} className="navbar__link">{link.label}</a>
+                            <a href={link.href} className={styles.link}>{link.label}</a>
                         </li>
                     ))}
                 </ul>
 
                 <button
-                    className={`navbar__hamburger ${menuOpen ? 'open' : ''}`}
+                    className={`${styles.hamburger} ${menuOpen ? styles.hamburgerOpen : ''}`}
                     onClick={() => setMenuOpen(!menuOpen)}
                     aria-label="Menu"
                 >
@@ -42,7 +43,7 @@ export const Navbar = () => {
                 </button>
             </nav>
 
-            <div className={`navbar__mobile-menu ${menuOpen ? 'open' : ''}`}>
+            <div className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ''}`}>
                 <ul>
                     {links.map((link) => (
                         <li key={link.href}>
@@ -53,7 +54,7 @@ export const Navbar = () => {
             </div>
 
             <div
-                className={`navbar__overlay ${menuOpen ? 'visible' : ''}`}
+                className={`${styles.overlay} ${menuOpen ? styles.overlayVisible : ''}`}
                 onClick={closeMenu}
             />
         </>

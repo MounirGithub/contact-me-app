@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
 import { useInView } from 'react-intersection-observer';
+import styles from './Contact.module.css';
 
 export const Contact = () => {
     const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
@@ -35,16 +36,16 @@ export const Contact = () => {
     };
 
     return (
-        <section className="contact" id="contact">
-            <div ref={ref} className={`contact__container reveal ${inView ? 'visible' : ''}`}>
+        <section className={styles.root} id="contact">
+            <div ref={ref} className={`${styles.container} reveal ${inView ? 'visible' : ''}`}>
                 <h2 className="section__title">Contact</h2>
                 <p style={{ color: 'var(--text-secondary)', marginTop: '1rem' }}>
                     Have a project in mind? Let's talk.
                 </p>
 
-                <form className="contact__form" onSubmit={handleSubmit(onSubmit)} noValidate>
+                <form className={styles.form} onSubmit={handleSubmit(onSubmit)} noValidate>
                     <input
-                        className="contact__input"
+                        className={styles.input}
                         type="text"
                         placeholder="Your name"
                         {...register('name', { required: 'Name is required', maxLength: 50 })}
@@ -52,7 +53,7 @@ export const Contact = () => {
                     {errors.name && <span style={{ color: '#ff5050', fontSize: '0.8rem' }}>{errors.name.message}</span>}
 
                     <input
-                        className="contact__input"
+                        className={styles.input}
                         type="email"
                         placeholder="Your email"
                         {...register('email', {
@@ -66,29 +67,29 @@ export const Contact = () => {
                     {errors.email && <span style={{ color: '#ff5050', fontSize: '0.8rem' }}>{errors.email.message}</span>}
 
                     <textarea
-                        className="contact__textarea"
+                        className={styles.textarea}
                         placeholder="Your message"
                         {...register('message', { required: 'Message is required', maxLength: 1000 })}
                     />
                     {errors.message && <span style={{ color: '#ff5050', fontSize: '0.8rem' }}>{errors.message.message}</span>}
 
-                    <button className="contact__submit" type="submit" disabled={disabled}>
+                    <button className={styles.submit} type="submit" disabled={disabled}>
                         {disabled ? 'Sending...' : 'Send'}
                     </button>
                 </form>
 
                 {alert && (
-                    <div className={`contact__alert contact__alert--${alert.type}`}>
+                    <div className={`${styles.alert} ${alert.type === 'success' ? styles.alertSuccess : styles.alertError}`}>
                         {alert.message}
                     </div>
                 )}
 
-                <div className="contact__socials">
+                <div className={styles.socials}>
                     <a
                         href="https://www.linkedin.com/in/benmounir/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="contact__social-link"
+                        className={styles.socialLink}
                         aria-label="LinkedIn"
                     >
                         in
@@ -97,7 +98,7 @@ export const Contact = () => {
                         href="https://github.com/MounirGithub"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="contact__social-link"
+                        className={styles.socialLink}
                         aria-label="GitHub"
                     >
                         GH
