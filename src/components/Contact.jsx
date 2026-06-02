@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import emailjs from '@emailjs/browser';
-import { useInView } from 'react-intersection-observer';
+import { AnimatedSection } from './AnimatedSection';
 import styles from './Contact.module.css';
 
 export const Contact = () => {
-    const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
     const {
         register,
         handleSubmit,
@@ -37,7 +36,7 @@ export const Contact = () => {
 
     return (
         <section className={styles.root} id="contact">
-            <div ref={ref} className={`${styles.container} reveal ${inView ? 'visible' : ''}`}>
+            <AnimatedSection className={styles.container}>
                 <h2 className="section__title">Contact</h2>
                 <p style={{ color: 'var(--text-secondary)', marginTop: '1rem' }}>
                     Have a project in mind? Let's talk.
@@ -104,7 +103,7 @@ export const Contact = () => {
                         GH
                     </a>
                 </div>
-            </div>
+            </AnimatedSection>
         </section>
     );
 };

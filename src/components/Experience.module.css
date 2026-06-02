@@ -17,14 +17,6 @@
 .item {
     position: relative;
     padding: 0 0 3rem 2.5rem;
-    opacity: 0;
-    transform: translateX(-30px);
-    transition: all 0.6s var(--transition);
-}
-
-.visible {
-    opacity: 1;
-    transform: translateX(0);
 }
 
 .item::before {

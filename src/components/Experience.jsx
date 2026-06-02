@@ -1,4 +1,4 @@
-import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
 import styles from './Experience.module.css';
 
 // Experience data from LinkedIn
@@ -56,18 +56,18 @@ export const Experience = () => {
 };
 
 const ExperienceItem = ({ date, role, company, description, delay }) => {
-    const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
-
     return (
-        <div
-            ref={ref}
-            className={`${styles.item} ${inView ? styles.visible : ''}`}
-            style={{ transitionDelay: `${delay}ms` }}
+        <motion.div
+            className={styles.item}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-50px' }}
+            transition={{ duration: 0.6, ease: 'easeOut', delay: delay / 1000 }}
         >
             <span className={styles.date}>{date}</span>
             <h3 className={styles.role}>{role}</h3>
             <p className={styles.company}>{company}</p>
             <p className={styles.description}>{description}</p>
-        </div>
+        </motion.div>
     );
 };

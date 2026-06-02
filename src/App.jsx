@@ -7,12 +7,14 @@ import { Navbar } from './components/Nav';
 import { Hero } from './components/Hero';
 import { SkillsSection } from './components/SkillsSection';
 import { Experience } from './components/Experience';
-import { ProjectsSection } from './components/ProjectsSection';
 import { Contact } from './components/Contact';
 import { AmbientBackground } from './components/AmbientBackground';
+import { ScrollIndicator } from './components/ScrollIndicator';
+import { useLenis } from './hooks/useLenis';
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const { scrollTo } = useLenis();
 
   const handleLoaderComplete = useCallback(() => {
     setLoading(false);
@@ -24,9 +26,10 @@ function App() {
       {!loading && (
         <>
           <CustomCursor />
-          <Navbar />
+          <Navbar scrollTo={scrollTo} />
           <main className="ocean-depth">
             <Hero />
+            <ScrollIndicator />
             <div className="section-wrapper section-wrapper--skills">
               <AmbientBackground variant="skills" />
               <SkillsSection />
@@ -35,10 +38,6 @@ function App() {
               <AmbientBackground variant="experience" />
               <Experience />
             </div>
-            {/* <div className="section-wrapper section-wrapper--projects">
-              <AmbientBackground variant="projects" />
-              <ProjectsSection />
-            </div> */}
             <div className="section-wrapper section-wrapper--contact">
               <AmbientBackground variant="projects" />
               <Contact />

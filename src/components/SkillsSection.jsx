@@ -1,4 +1,4 @@
-import { useInView } from 'react-intersection-observer';
+import { AnimatedSection } from './AnimatedSection';
 import styles from './Skills.module.css';
 
 const skillsRow1 = [
@@ -37,18 +37,16 @@ const MarqueeRow = ({ skills, reverse }) => (
 );
 
 export const SkillsSection = () => {
-    const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
-
     return (
         <section className="section" id="skills">
-            <div ref={ref} className={`reveal ${inView ? 'visible' : ''}`}>
+            <AnimatedSection>
                 <h2 className="section__title">Skills</h2>
 
                 <div className={styles.carousel}>
                     <MarqueeRow skills={skillsRow1} />
                     <MarqueeRow skills={skillsRow2} reverse />
                 </div>
-            </div>
+            </AnimatedSection>
         </section>
     );
 };

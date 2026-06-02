@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import styles from './Nav.module.css';
 
-export const Navbar = () => {
+export const Navbar = ({ scrollTo }) => {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -19,15 +19,25 @@ export const Navbar = () => {
 
     const closeMenu = () => setMenuOpen(false);
 
+    const handleNav = useCallback((e, href) => {
+        e.preventDefault();
+        closeMenu();
+        if (scrollTo) {
+            scrollTo(href, { offset: -80 });
+        } else {
+            document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, [scrollTo]);
+
     return (
         <>
             <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
-                <a href="#hero" className={styles.logo}>M.</a>
+                <a href="#hero" onClick={(e) => handleNav(e, '#hero')} className={styles.logo}>M.</a>
 
                 <ul className={styles.links}>
                     {links.map((link) => (
                         <li key={link.href}>
-                            <a href={link.href} className={styles.link}>{link.label}</a>
+                            <a href={link.href} onClick={(e) => handleNav(e, link.href)} className={styles.link}>{link.label}</a>
                         </li>
                     ))}
                 </ul>
@@ -47,7 +57,7 @@ export const Navbar = () => {
                 <ul>
                     {links.map((link) => (
                         <li key={link.href}>
-                            <a href={link.href} onClick={closeMenu}>{link.label}</a>
+                            <a href={link.href} onClick={(e) => handleNav(e, link.href)}>{link.label}</a>
                         </li>
                     ))}
                 </ul>
