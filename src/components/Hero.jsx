@@ -1,6 +1,7 @@
-import { useMemo } from 'react';
+import { useMemo, useState, useCallback } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { Moon } from './Moon';
+import { Constellations } from './Constellations';
 import styles from './Hero.module.css';
 
 const GLINTS = Array.from({ length: 12 }, (_, i) => ({
@@ -13,6 +14,9 @@ const GLINTS = Array.from({ length: 12 }, (_, i) => ({
 }));
 
 export const Hero = () => {
+    const [isDay, setIsDay] = useState(false);
+    const handleDayMode = useCallback((day) => setIsDay(day), []);
+
     const stars = useMemo(() => {
         return Array.from({ length: 80 }, (_, i) => ({
             id: i,
@@ -25,10 +29,10 @@ export const Hero = () => {
     }, []);
 
     return (
-        <section className={styles.root} id="hero">
+        <section className={`${styles.root} ${isDay ? styles.dayRoot : ''}`} id="hero">
             <div className={styles.sky} />
 
-            <div className={styles.stars}>
+            <div className={`${styles.stars} ${isDay ? styles.starsHidden : ''}`}>
                 {stars.map((s) => (
                     <span
                         key={s.id}
@@ -45,7 +49,11 @@ export const Hero = () => {
                 ))}
             </div>
 
-            <Moon />
+            <div className={styles.shootingStar} />
+
+            <Constellations />
+
+            <Moon onDayMode={handleDayMode} />
 
             <div className={styles.content}>
                 <h1 className={styles.name}>Mounir</h1>

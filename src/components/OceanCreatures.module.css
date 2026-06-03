@@ -21,9 +21,19 @@
 }
 
 @keyframes tentacleSway {
-    0%, 100% { transform: rotate(0deg) translateX(0); }
-    25% { transform: rotate(2deg) translateX(2px); }
-    75% { transform: rotate(-2deg) translateX(-2px); }
+
+    0%,
+    100% {
+        transform: rotate(0deg) translateX(0);
+    }
+
+    25% {
+        transform: rotate(2deg) translateX(2px);
+    }
+
+    75% {
+        transform: rotate(-2deg) translateX(-2px);
+    }
 }
 
 /* ─── Flipper stroke (turtle) ─── */
@@ -33,9 +43,19 @@
 }
 
 @keyframes flipperStroke {
-    0%, 100% { transform: rotate(0deg); }
-    30% { transform: rotate(-12deg); }
-    60% { transform: rotate(8deg); }
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    30% {
+        transform: rotate(-12deg);
+    }
+
+    60% {
+        transform: rotate(8deg);
+    }
 }
 
 /* ─── Bioluminescence pulse ─── */
@@ -44,8 +64,17 @@
 }
 
 @keyframes bioFlash {
-    0%, 100% { opacity: 0.3; transform: scale(0.8); }
-    50% { opacity: 1; transform: scale(1.2); }
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
 }
 
 /* ─── Anglerfish lure ─── */
@@ -54,8 +83,17 @@
 }
 
 @keyframes lurePulse {
-    0%, 100% { opacity: 0.7; r: 8; }
-    50% { opacity: 1; r: 10; }
+
+    0%,
+    100% {
+        opacity: 0.7;
+        r: 8;
+    }
+
+    50% {
+        opacity: 1;
+        r: 10;
+    }
 }
 
 /* ─── Float animations (jellyfish) ─── */
@@ -72,23 +110,59 @@
 }
 
 @keyframes floatUp1 {
-    0%, 100% { transform: translate(0, 0) rotate(0deg); }
-    25% { transform: translate(10px, -15px) rotate(2deg); }
-    50% { transform: translate(-5px, -25px) rotate(-1deg); }
-    75% { transform: translate(8px, -10px) rotate(1deg); }
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(10px, -15px) rotate(2deg);
+    }
+
+    50% {
+        transform: translate(-5px, -25px) rotate(-1deg);
+    }
+
+    75% {
+        transform: translate(8px, -10px) rotate(1deg);
+    }
 }
 
 @keyframes floatUp2 {
-    0%, 100% { transform: translate(0, 0) rotate(0deg); }
-    30% { transform: translate(-12px, -20px) rotate(-2deg); }
-    60% { transform: translate(8px, -30px) rotate(1deg); }
-    80% { transform: translate(-5px, -12px) rotate(-1deg); }
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    30% {
+        transform: translate(-12px, -20px) rotate(-2deg);
+    }
+
+    60% {
+        transform: translate(8px, -30px) rotate(1deg);
+    }
+
+    80% {
+        transform: translate(-5px, -12px) rotate(-1deg);
+    }
 }
 
 @keyframes floatUp3 {
-    0%, 100% { transform: translate(0, 0); }
-    40% { transform: translate(15px, -18px); }
-    70% { transform: translate(-8px, -28px); }
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    40% {
+        transform: translate(15px, -18px);
+    }
+
+    70% {
+        transform: translate(-8px, -28px);
+    }
 }
 
 /* ─── Swim animations (fish) ─── */
@@ -101,19 +175,47 @@
 }
 
 @keyframes swimRight {
-    0% { transform: translateX(-100px) translateY(0); }
-    25% { transform: translateX(25vw) translateY(-8px); }
-    50% { transform: translateX(50vw) translateY(5px); }
-    75% { transform: translateX(75vw) translateY(-5px); }
-    100% { transform: translateX(100vw) translateY(0); }
+    0% {
+        transform: translateX(-100px) translateY(0);
+    }
+
+    25% {
+        transform: translateX(25vw) translateY(-8px);
+    }
+
+    50% {
+        transform: translateX(50vw) translateY(5px);
+    }
+
+    75% {
+        transform: translateX(75vw) translateY(-5px);
+    }
+
+    100% {
+        transform: translateX(100vw) translateY(0);
+    }
 }
 
 @keyframes swimLeft {
-    0% { transform: translateX(100vw) translateY(0) scaleX(-1); }
-    25% { transform: translateX(75vw) translateY(6px) scaleX(-1); }
-    50% { transform: translateX(50vw) translateY(-8px) scaleX(-1); }
-    75% { transform: translateX(25vw) translateY(4px) scaleX(-1); }
-    100% { transform: translateX(-100px) translateY(0) scaleX(-1); }
+    0% {
+        transform: translateX(100vw) translateY(0) scaleX(-1);
+    }
+
+    25% {
+        transform: translateX(75vw) translateY(6px) scaleX(-1);
+    }
+
+    50% {
+        transform: translateX(50vw) translateY(-8px) scaleX(-1);
+    }
+
+    75% {
+        transform: translateX(25vw) translateY(4px) scaleX(-1);
+    }
+
+    100% {
+        transform: translateX(-100px) translateY(0) scaleX(-1);
+    }
 }
 
 /* ─── Glide animation (manta) ─── */
@@ -122,13 +224,33 @@
 }
 
 @keyframes mantaGlide {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    15% { transform: translate(80px, -25px) rotate(3deg); }
-    30% { transform: translate(160px, 15px) rotate(-2deg); }
-    50% { transform: translate(220px, -20px) rotate(2deg); }
-    70% { transform: translate(130px, 10px) rotate(-3deg); }
-    85% { transform: translate(50px, -12px) rotate(1deg); }
-    100% { transform: translate(0, 0) rotate(0deg); }
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    15% {
+        transform: translate(80px, -25px) rotate(3deg);
+    }
+
+    30% {
+        transform: translate(160px, 15px) rotate(-2deg);
+    }
+
+    50% {
+        transform: translate(220px, -20px) rotate(2deg);
+    }
+
+    70% {
+        transform: translate(130px, 10px) rotate(-3deg);
+    }
+
+    85% {
+        transform: translate(50px, -12px) rotate(1deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
 }
 
 /* ─── Drift animation (anglerfish) ─── */
@@ -137,15 +259,32 @@
 }
 
 @keyframes slowDrift {
-    0%, 100% { transform: translate(0, 0) rotate(0deg); }
-    20% { transform: translate(35px, -15px) rotate(2deg); }
-    40% { transform: translate(70px, 10px) rotate(-1deg); }
-    60% { transform: translate(45px, -8px) rotate(1deg); }
-    80% { transform: translate(15px, 12px) rotate(-2deg); }
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    20% {
+        transform: translate(35px, -15px) rotate(2deg);
+    }
+
+    40% {
+        transform: translate(70px, 10px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(45px, -8px) rotate(1deg);
+    }
+
+    80% {
+        transform: translate(15px, 12px) rotate(-2deg);
+    }
 }
 
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
+
     .creature svg,
     .creature {
         transform-origin: center center;
@@ -156,7 +295,14 @@
     }
 
     @keyframes mantaGlideMobile {
-        0%, 100% { transform: translate(0, 0); }
-        50% { transform: translate(40px, -10px); }
+
+        0%,
+        100% {
+            transform: translate(0, 0);
+        }
+
+        50% {
+            transform: translate(40px, -10px);
+        }
     }
 }
